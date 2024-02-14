@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"> -->
+    <title>Orders Page</title>
+    <style>
+      body {
+        padding-top: 60px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="row">
+      <div class="col-6">
+        <h2 class="mt-4 mb-4">Order List</h2>
+
+        <table class="table table-bordered">
+          <thead class="thead-dark">
+            <tr>
+              <th scope="col">Order ID</th>
+              <!-- <th scope="col">Product</th> -->
+              <th scope="col">Status</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let item of orders" (click)="setSelectedorder(item)">
+              <td>{{ item.id }}</td>
+              <!-- <td>
+              <table>
+                <tr>
+                  <td>{{ item.productList.title }}</td>
+                </tr>
+              </table>
+            </td> -->
+              <td>{{ item.orderStatus }}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="col-6">
+        <p>productList</p>
+        <div class="" *ngFor="let products of aorder.productList">
+          <div>
+            <p>1) product Name = {{ products.title }}</p>
+          </div>
+          <div>
+            <p>2) Description = {{ products.description }}</p>
+          </div>
+          <div>
+            <p>3) price = {{ products.price }}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

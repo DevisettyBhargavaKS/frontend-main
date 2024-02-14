@@ -1,0 +1,55 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Admin Page</title>
+  </head>
+  <body>
+    <div class="container mt-5">
+      <h2>Product List - Admin Page</h2>
+      <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">Id</th>
+            <th scope="col">Title</th>
+            <th scope="col">Description</th>
+            <th scope="col">Photo</th>
+         
+            <th scope="col">Price</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let product of userproducts">
+            <th scope="row">{{ product.id }}</th>
+            <td>{{ product.title }}</td>
+            <td>{{ product.description }}</td>
+            <td> <img
+              class="product-img"
+              src="{{ 'http://localhost:8080/api/downloadFile/' + product.id }}"
+              alt="Product 1"
+              width="100px"
+            /></td>
+            
+            <td>{{ product.price }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <nav aria-label="...">
+      <ul class="pagination">
+        <li class="page-item disabled">
+          <a class="page-link" href="#" tabindex="-1">Previous</a>
+        </li>
+        <li class="page-item"><a class="page-link" href="#">1</a></li>
+        <li class="page-item active">
+          <a class="page-link" href="#">2 <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="page-item"><a class="page-link" href="#">3</a></li>
+        <li class="page-item">
+          <a class="page-link" href="#">Next</a>
+        </li>
+      </ul>
+    </nav>
+  </body>
+</html>
